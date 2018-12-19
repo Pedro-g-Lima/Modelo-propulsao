@@ -1,4 +1,3 @@
-
 function Eq_Dif_func(m, g, rho, S, c_l, c_d, miu, a, b, c, h, counter)
 
 % -- VARIAVEIS INPUT -- 
@@ -26,12 +25,13 @@ v=matlabFunction(v);
 x=matlabFunction(f-f(0));
 g=matlabFunction(g);
 
-vpa(v(t),6)                            %Expressao algebrica v(t)
-vpa(x,6)                               %Expressao algebrica x(t)
-vpa(TOT,5)                             %Tempo decorrido ate descolagem
-vpa(v(TOT),5)                          %Velocidade a descolagem
+V_t = vpa(v(t),6)                            %Expressao algebrica v(t)
+X_t = vpa(x,6)                               %Expressao algebrica x(t)
+T=double(vpa(TOT,5));                  %Tempo decorrido ate descolagem
+V=double(vpa(v(TOT),5));                  %Velocidade a descolagem
 
-T=double(TOT);
+fprintf('Tempo ate a descolagem: %f s \n', T);
+fprintf('Velocidade a descolagem: %f m/s \n', V);
 
 cstring='rgbcmyk';                     %Cor dos graficos
 
