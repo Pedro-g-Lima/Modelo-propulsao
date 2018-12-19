@@ -1,4 +1,5 @@
-function Eq_Dif_func(m, g, rho, S, c_l, c_d, miu, a, b, c, k, h, counter)
+
+function Eq_Dif_func(m, g, rho, S, c_l, c_d, miu, a, b, c, h, counter)
 
 % -- VARIAVEIS INPUT -- 
 % m - Massa
@@ -30,6 +31,8 @@ vpa(x,6)                               %Expressao algebrica x(t)
 vpa(TOT,5)                             %Tempo decorrido ate descolagem
 vpa(v(TOT),5)                          %Velocidade a descolagem
 
+T=double(TOT);
+
 cstring='rgbcmyk';                     %Cor dos graficos
 
 if h==1                                %logica do switch para manter os graficos
@@ -39,7 +42,7 @@ else
     hold off
 end
 subplot(2,2,1)                         %plot v(t)
-fplot (v, [0 k], cstring(mod(counter,7)+1))
+fplot (v, [0 T], cstring(mod(counter,7)+1))
 title ('Grafico v(t)')
 xlabel('Tempo (s)');
 ylabel('Velocidade (m/s)')
@@ -49,7 +52,7 @@ if h==1                                %logica do switch para manter os graficos
     hold on
 end  
 subplot(2,2,2)                         %plot x(t)
-fplot (x, [0 k], cstring(mod(counter,7)+1))
+fplot (x, [0 T], cstring(mod(counter,7)+1))
 title ('Grafico x(t)')
 xlabel('Tempo (s)');
 ylabel('Posição (m)')
@@ -59,7 +62,7 @@ if h==1                                %logica do switch para manter os graficos
     hold on
 end 
 subplot(2,2,3)                         %plot v(x)
-fplot (g, [0 k], cstring(mod(counter,7)+1))
+fplot (g, [0 T], cstring(mod(counter,7)+1))
 title ('Grafico v(x(t))')
 xlabel('Posição (m)');
 ylabel('Velocidade (m/s)')
@@ -67,8 +70,3 @@ grid on
 hold off
 
 end
-
-
-
-
-
