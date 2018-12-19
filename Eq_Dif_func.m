@@ -18,7 +18,7 @@ eqn = diff(v,t) == (v*v)*(1/m)*(a+rho*S*0.5*(miu*c_l-c_d))+v*(b/m)+(c/m-miu*g);
 cond = v(0) == 0;                      %Condicao inicial
 v(t) = dsolve(eqn,cond);               %Resolucao da eq diferencial
 f = int(v);                            %integracao para obter x(t)
-g = v(f(t));                           %funcao v(x(t))
+g = v(f(t)-f(0));                           %funcao v(x(t))
 TOT = vpasolve(f(t)-f(0)==55, t,10);   %Instante de descolagem t, que e solucao de (x(t)=55m)
 
 v=matlabFunction(v);
