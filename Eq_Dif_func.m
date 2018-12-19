@@ -13,7 +13,7 @@ g=matlabFunction(g);
 
 
 cstring='rgbcmyk';                            %cor dos graficos
-
+%TESTE
 
 if h==1                                       %logica do switch para manter os graficos
     hold on
@@ -35,7 +35,7 @@ subplot(2,2,2)                                 %plot x(t)
 fplot (f, [0 k], cstring(mod(counter,7)+1))
 title ('Grafico x(t)')
 xlabel('Tempo (s)');
-ylabel('Posição (m)')
+ylabel('PosiÃ§Ã£o (m)')
 grid on
 
 if h==1                                      %logica do switch para manter os graficos
@@ -44,7 +44,7 @@ end
 subplot(2,2,3)                               %plot v(x(t))
 fplot (g, [0 k], cstring(mod(counter,7)+1))
 title ('Grafico v(x(t))')
-xlabel('Posição (m)');
+xlabel('PosiÃ§Ã£o (m)');
 ylabel('Velocidade (m/s)')
 grid on
 hold off
