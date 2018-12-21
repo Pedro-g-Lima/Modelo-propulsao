@@ -8,9 +8,6 @@ function [a, b, c] = Regressao(energia)
     %ficheiros da bateria Turnigy Graphene 3S 4Ah
     turnigy_4 = ["T4_escoamento_0","T4_escoamento_7","T4_escoamento_8_5","T4_escoamento_10",...
                  "T4_escoamento_12","T4_escoamento_13","T4_escoamento_14_5"];
-
-    vel = zeros(1, 14); 
-    thrust = zeros(1, 14);
     
     %Escolha dos ficheiros consoante a opção escolhida no menu 
     switch energia
@@ -19,6 +16,10 @@ function [a, b, c] = Regressao(energia)
         case 2 
             fname = turnigy_4;
     end
+    
+    
+    vel = zeros(1, length(fname)); 
+    thrust = zeros(1, length(fname));
     
     %Recolha dos dados de velocidade e thrust medios
     for i=1:length(fname)
