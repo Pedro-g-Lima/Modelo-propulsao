@@ -21,14 +21,18 @@ function [a, b, c] = Regressao(energia)
     [vel(i), thrust(i)] = ler_dados(fname(i));
     ficheiros_lidos = i
     end 
-   
-    p = polyfit(vel,thrust,2);
-    a = p(1);
-    b = p(2);
-    c = p(3);
     
-    if abs(a)< 0.001
-        a = 0;
+    switch energia
+        case 1
+            p = polyfit(vel,thrust,1);
+            a = 0;
+            b = p(1);
+            c = p(2);
+        case 2 
+            p = polyfit(vel,thrust,2);
+            a = p(1);
+            b = p(2);
+            c = p(3);       
     end
 end
 
