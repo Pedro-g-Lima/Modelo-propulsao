@@ -1,14 +1,14 @@
 function [ ] = MAIN(  )
-    
-    op = menu('ESCOLHA A FOMTE ENERG�TICA A ANALISAR', ...
-            'Fonte de Tens�o', ...
-            'Bateria Turnigy Bolt 4000mAh',...
+    %Menu de escolha da fonte de energia a analisar os dados
+    op = menu('ESCOLHA A FOMTE ENERGÉTICA A ANALISAR', ...
+            'Fonte de Tensão', ...
+            'Bateria Turnigy Graphene 3S 4Ah',...
             'Futuras coisas', 'Cancelar');
     switch op
         case 1
-            energia = 1;
+            energia = 1;        %Fonte de Tensão
         case 2 
-            energia = 2;
+            energia = 2;        %Turnigy Graphene 3S 4Ah
         case 3
             energia = 3;
         case 4
@@ -16,7 +16,7 @@ function [ ] = MAIN(  )
     end
     
     if energia ~= 0
-        Eq_Dif_App
+        Eq_Dif_App           %Aplicação
     end
         
 end
