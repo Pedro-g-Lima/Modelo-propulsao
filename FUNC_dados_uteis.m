@@ -7,11 +7,11 @@ function [zero, primeiro_100,cem] = dados_uteis( file_name )
     primeiro_100=0;
     n = length(perc_throttle);
     for k=1:n 
-        if perc_throttle (k) ~= 0    %quando houver o primeiro valor diferente de 0, já não vai contar mais nenhum
+        if perc_throttle (k) ~= 0    %quando houver o primeiro valor diferente de 0, jÃ¡ nÃ£o vai contar mais nenhum
             primeiro_zero = 0;
         end
         if perc_throttle (k) == 0 && primeiro_zero == 1
-            zero = zero + 1;      %número de dados a throttle 0 - inicio
+            zero = zero + 1;      %nÃºmero de dados a throttle 0 - inicio
         end
         if perc_throttle (k) >= 100    %perguntar
             cem = cem + 1;        %numero de dados a throttle 100%
