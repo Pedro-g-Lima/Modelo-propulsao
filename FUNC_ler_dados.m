@@ -1,6 +1,6 @@
-function [velocidade_mediana, thrust_efetivo] = ler_dados( file_name )
+function [velocidade_mediana, thrust_efetivo] = FUNC_ler_dados( file_name )
   
-    [zero, primeiro_100, cem] = dados_uteis( file_name );
+    [zero, primeiro_100, cem] = FUNC_dados_uteis( file_name );
    
     %Leitura dos valores de DRAG - Thrust a 0%, apenas no inicio
     str_drag_inicial = sprintf('H2:H%d',zero+1);
