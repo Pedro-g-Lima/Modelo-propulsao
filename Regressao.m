@@ -23,8 +23,7 @@ function [a, b, c] = Regressao(energia)
     
     %Recolha dos dados de velocidade e thrust medios
     for i=1:length(fname)
-    [vel(i), thrust(i)] = ler_dados(fname(i));
-    ficheiros_lidos = i
+    [vel(i), thrust(i)] = FUNC_ler_dados(fname(i));
     end 
     
     %Cálculo dos coeficientes da regressão linear

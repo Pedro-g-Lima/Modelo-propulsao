@@ -1,4 +1,4 @@
-function [zero, primeiro_100,cem] = dados_uteis( file_name )
+function [zero, primeiro_100,cem] = FUNC_dados_uteis( file_name )
 
     perc_throttle = xlsread(file_name,1,'C:C');
     cem=0;
