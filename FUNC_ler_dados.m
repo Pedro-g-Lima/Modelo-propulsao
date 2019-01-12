@@ -4,7 +4,7 @@ function [velocidade_mediana, thrust_efetivo] = FUNC_ler_dados( file_name )
    
     %Leitura dos valores de DRAG - Thrust a 0%, apenas no inicio
     str_drag_inicial = sprintf('H2:H%d',zero+1);
-    drag_inicial = 9.81* xlsread(file_name,1, str_drag_inicial);
+    drag_inicial = 9.81 * xlsread(file_name,1, str_drag_inicial);
     
     %Leitura dos valores de thrust > 100%
     str_thrust_100 = sprintf('H%d:H%d',primeiro_100, primeiro_100 + cem);
